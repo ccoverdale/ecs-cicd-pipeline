@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Status - Operational</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 1rem;
+      padding: 3rem 2.5rem;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+    }
+
+    .badge-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.625rem;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #10b981;
+      animation: flash 1.2s infinite ease-in-out alternate;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Flashing / Pulsing Banner Text */
+    .flash-text {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #10b981;
+      letter-spacing: 0.025em;
+      animation: pulseText 1.5s infinite ease-in-out;
+      margin-bottom: 1.5rem;
+    }
+
+    p.description {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .divider {
+      height: 1px;
+      background: #334155;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-info {
+      display: flex;
+      justify-content: space-between;
+      color: #64748b;
+      font-size: 0.75rem;
+      font-weight: 500;
+      font-mono: monospace;
+    }
+
+    /* Keyframe Animations */
+    @keyframes flash {
+      0% {
+        opacity: 0.2;
+        transform: scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+
+    @keyframes pulseText {
+      0%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+      }
+      50% {
+        opacity: 0.3;
+        text-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="badge-container">
+      <div class="status-badge">
+        <span class="dot"></span>
+        Live Endpoint
+      </div>
+    </div>
+
+    <h1>System Online</h1>
+    
+    <!-- Flashing Banner Text -->
+    <div class="flash-text">⚡ YOUR WEBSITE IS UP AND RUNNING! ⚡</div>
+
+    <p class="description">
+      Infrastructure verification complete. The application ingress tier, load balancer target group, and secure delivery network are functioning nominally.
+    </p>
+
+    <div class="divider"></div>
+
+    <div class="footer-info">
+      <span>HTTP 200 OK</span>
+      <span>Latency: &lt; 15ms</span>
+    </div>
+  </div>
+
+</body>
+</html>
